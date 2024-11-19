@@ -41,6 +41,7 @@ function new() {
 function create() {
     FlxG.mouse.visible = true;
     add(new FlxSprite().makeGraphic(FlxG.width, FlxG.height, 0xFF808080));
+    imPlacingMyHoldersFuck = FlxG.sound.playMusic(Paths.music("modSelect"));
 
     // temp graphic, replace with something cooler pls
     modCardSprite = new FlxSprite(0, 0, Paths.image("MainMenu/modcard"));
@@ -187,6 +188,10 @@ function changeSelected(hur:Int = 0) {
 
 function enterModState() {
     if (enteringMod && modsInFolder.length < 1) return;
+    if (FlxG.sound.music != null) {
+        FlxG.sound.music.stop();
+        FlxG.sound.music = null;
+    }
     enteringMod = true;
     
     trace(modsInFolder[curSel]);

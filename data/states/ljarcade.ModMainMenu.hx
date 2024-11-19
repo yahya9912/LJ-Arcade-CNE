@@ -388,6 +388,8 @@ function new() {
 }
 
 function create() {
+    CoolUtil.playMenuSong(); //doing this to stop my shitty menu song 🙏🏽💔 - yahya
+
     var path = "ModMenu/bgs";
     for (funnies in FileSystem.readDirectory(ModsFolder.modsPath+ModsFolder.currentModFolder+"/images/"+path)) {
         if (Path.extension(funnies) != "png") continue;
