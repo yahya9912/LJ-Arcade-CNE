@@ -4,7 +4,7 @@ public static var botplay:Bool = false;
 
 var _allowedGitaroo:Bool = allowGitaroo;
 function update(elapsed) {
-    if (FlxG.keys.justPressed.B) {
+    if (FlxG.keys.justPressed.ONE) { //fuck you lj
         botplay = !botplay;
         canDie = !botplay;
         if (_allowedGitaroo) allowGitaroo = !botplay;
