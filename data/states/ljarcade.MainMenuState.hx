@@ -276,8 +276,8 @@ function update(elapsed) {
 
     if (controls.ACCEPT) enterModState();
 
-    if (FlxG.keys.justPressed.W || FlxG.keys.justPressed.UP) changeSelected(1);
-    if (FlxG.keys.justPressed.S || FlxG.keys.justPressed.DOWN) changeSelected(-1);
+    if (FlxG.keys.justPressed.W || FlxG.keys.justPressed.UP || FlxG.mouse.wheel) changeSelected(1);
+    if (FlxG.keys.justPressed.S || FlxG.keys.justPressed.DOWN || -FlxG.mouse.wheel) changeSelected(-1);
 
     if (FlxG.keys.justPressed.D || FlxG.keys.justPressed.RIGHT) doFunnyTest();
 
